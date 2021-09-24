@@ -19,3 +19,34 @@ class Hour{
         int hour;
         int minute;
 };
+
+//Constructores
+Hour::Hour(){
+    hour = 0;
+    minute = 0;
+}
+Hour::Hour(int hr, int min){
+    hour = hr;
+    minute = min;
+}
+
+//Métodos de Modificación
+void Hour::setHour(int hr){
+    hour = hr;
+}
+void Hour::setMinute(int min){
+    minute = min;
+}
+
+//Métodos de Acceso
+int Hour::getHour(){
+    return hour;
+}
+int Hour::getMinute(){
+    return minute;
+}
+
+//Métodos
+void Hour::show(){
+    cout<<hour<<":"<<minute;
+}
