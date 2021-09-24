@@ -5,15 +5,19 @@ using namespace std;
 
 class Actor{
     public:
+        /*Constructors*/
         Actor();
         Actor(int id, string nm);
 
+        /*Modifiaction methods*/
         void setID(int id);
         void setName(string nm);
 
+        /*Access methods*/
         int getID();
         string getName();
 
+        /*Methods*/
         void show();
 
     private:
@@ -21,7 +25,7 @@ class Actor{
         string name;
 };
 
-//Constructores
+/*Constructors*/
 Actor::Actor(){
     ID = 0;
     name = "";
@@ -31,7 +35,7 @@ Actor::Actor(int id, string nm){
     name = nm;
 }
 
-//Métodos de modificación
+/*Modifiaction methods*/
 void Actor::setID(int id){
     ID = id;
 }
@@ -39,7 +43,7 @@ void Actor::setName(string nm){
     name = nm;
 }
 
-//Métodos de acceso
+/*Access methods*/
 int Actor::getID(){
     return ID;
 }
@@ -47,7 +51,7 @@ string Actor::getName(){
     return name;
 }
 
-//Métodos
+/*Methods*/
 void Actor::show(){
     cout<<ID<<" "<<name;
 }

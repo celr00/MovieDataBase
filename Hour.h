@@ -4,15 +4,19 @@ using namespace std;
 
 class Hour{
     public:
+        /*Constructors*/
         Hour();
         Hour(int hr, int min);
 
+        /*Modifiaction methods*/
         void setHour(int hr);
         void setMinute(int min);
 
+        /*Access methods*/
         int getHour();
         int getMinute();
 
+        /*Methods*/
         void show();
 
     private:
@@ -20,7 +24,7 @@ class Hour{
         int minute;
 };
 
-//Constructores
+/*Constructors*/
 Hour::Hour(){
     hour = 0;
     minute = 0;
@@ -30,7 +34,7 @@ Hour::Hour(int hr, int min){
     minute = min;
 }
 
-//Métodos de Modificación
+/*Modifiaction methods*/
 void Hour::setHour(int hr){
     hour = hr;
 }
@@ -38,7 +42,7 @@ void Hour::setMinute(int min){
     minute = min;
 }
 
-//Métodos de Acceso
+/*Access methods*/
 int Hour::getHour(){
     return hour;
 }
@@ -46,7 +50,7 @@ int Hour::getMinute(){
     return minute;
 }
 
-//Métodos
+/*Methods*/
 void Hour::show(){
     cout<<hour<<":"<<minute;
 }

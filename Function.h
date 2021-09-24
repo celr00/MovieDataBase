@@ -1,27 +1,28 @@
 #include <iostream>
+#include <string>
 #include "Hour.h"
 
 using namespace std;
 
 class Function{
     public:
-        /*Constructores*/
+        /*Constructors*/
         Function();
         Function(string cve, int num, Hour hr, int rm);
 
-        /*Métodos de modificación*/
+        /*Modifiaction methods*/
         void setCveFunction(string cve);
         void setMovieNum(int num);
         void setHour(Hour hr);
         void setRoom(int rm);
 
-        /*Métodos de acceso*/
+        /*Access methods*/
         string getCveFunction();
         int getMovieNum();
         Hour getHour();
         int getRoom();
 
-        /*Métodos*/
+        /*Methods*/
         void show();
 
     private:
@@ -31,7 +32,7 @@ class Function{
         int room;
 };
 
-/*Constructores*/
+/*Constructors*/
 Function::Function(){
     cveFunction = "A0";
     movieNum = 0;
@@ -45,7 +46,7 @@ Function::Function(string cve, int num, Hour hr, int rm){
     room = rm;
 }
 
-/*Métodos de modificación*/
+/*Modifiaction methods*/
 void Function::setCveFunction(string cve){
     cveFunction = cve;
 }
@@ -59,7 +60,7 @@ void Function::setRoom(int rm){
     room = rm;
 }
 
-/*Métodos de acceso*/
+/*Access methods*/
 string Function::getCveFunction(){
     return cveFunction;
 }
@@ -73,7 +74,7 @@ int Function::getRoom(){
     return room;
 }
 
-/*Métodos*/
+/*Methods*/
 void Function::show(){
     cout<<"Funtion number: "<<cveFunction<<". Movie number: "<<movieNum<<". Start at ";
     hour.show();
