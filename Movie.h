@@ -84,7 +84,7 @@ string Movie::getGenre(){
     return genre;
 }
 int Movie::getActorsNum(){
-    return actorsNum
+    return actorsNum;
 }
 int Movie::getActorID(int idx){
     return actorList[idx];
