@@ -236,7 +236,34 @@ int main(){
                 }
                 break;
             case '6':
+                {   
+                    int reqID;
+                    Actor currentActor;
+                    cout<<"Ingrese el ID del actor: ";cin>>reqID;
+                    for(int i=0;i<=limit;i++){
+                        if(actors[i].getID() == reqID){
+                            currentActor = actors[i];
+                            break;
+                        }
+                    }
 
+                    if(currentActor.getID() == 0){
+                        cout<<"The actor doesn't exists"<<endl;
+                        break;
+                    }
+
+                    cout<<"Showing movies where this actor participates: "<<endl;
+                    //Checking movies
+                    for(int i=0; i<limit; i++){
+                        //Checking actors in movies
+                        for(int j=0; j<movies[i].getActorsNum(); j++){
+                            if(movies[i].getActorID(j) == reqID){
+                                cout<<"\t"<<movies[i].getTitle()<<endl;
+                            }
+                        }
+                    }
+
+                }
                 break;
             case '7':
                 cout<<"Thanks for coming!"<<endl;
