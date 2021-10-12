@@ -161,23 +161,35 @@ int main(){
                 }
                 break;
             case '4':
-                hour = -1;
-                min = -1;
-                while(hour<0||hour>23){
-                    cout<<"Enter the start hour: ";cin>>hour;
-                }
-                while(min<0||min>59){
-                    cout<<"Enter the start minute: ";cin>>min;
-                }
-                Hour currentHour;
-                for(int i=0;i<limit;i++){
-                    if(functions[i].getCveFunction() == "A0"){
-                        break;
+                {
+                    hour = -1;
+                    min = -1;
+                    while(hour<0||hour>23){
+                        cout<<"Enter the start hour: ";cin>>hour;
                     }
-                    currentHour = functions[i].getHour();
-                    Function currentFunc = functions[i];
-                    if(currentHour.getHour() == hour && currentHour.getMinute() == min){
-                        
+                    while(min<0||min>59){
+                        cout<<"Enter the start minute: ";cin>>min;
+                    }
+                    Hour currentHour = Hour(hour, min);
+
+                    cout<<"Showing funtions that start at ";
+                    currentHour.show();
+                    cout<<endl;
+
+                    Movie currentMovie;
+
+                    for(int i=0;i<limit;i++){
+                        if(functions[i].getCveFunction() == "A0"){
+                            break;
+                        }
+                        if(functions[i].getHour().getHour()==hour && functions[i].getHour().getMinute() == min){
+                            for(int j=0;j<limit;j++){
+                                if(functions[i].getMovieNum() == movies[j].getMovieNum()){
+                                    currentMovie = movies[j];
+                                }
+                            }
+                            cout<<"\t"<<functions[i].getCveFunction()<<" "<<currentMovie.getTitle()<<" Room: "<<functions[i].getRoom()<<endl;
+                        }
                     }
                 }
                 break;
