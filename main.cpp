@@ -194,7 +194,46 @@ int main(){
                 }
                 break;
             case '5':
+                {       
+                string clave;
+                Function currentFunction;
 
+                Movie currentMovie;
+                cout<<"Enter de Function's number: ";cin>>clave;
+                for(int i=0;i<limit;i++){
+                    if(functions[i].getCveFunction() == clave){
+                        currentFunction = functions[i];
+                        for(int j=0;j<limit;j++){
+                            if(currentFunction.getMovieNum() == movies[j].getMovieNum()){
+                                currentMovie = movies[j];
+                            }
+                        }
+                        break;
+                    }
+                }
+                if(currentFunction.getCveFunction() == "A0"){
+                    cout<<"There is no function with that number, try again later."<<endl;
+                    break;
+                }
+
+                cout<<"Function: "<<clave<<endl;
+                cout<<"Title: "<<currentMovie.getTitle()<<endl;
+                cout<<"Duration: "<<currentMovie.getDuration()<<" min"<<endl;
+                cout<<"Room: "<<currentFunction.getRoom()<<endl;
+                cout<<"Hour: ";
+                currentFunction.getHour().show();
+                cout<<endl;
+                cout<<"Genre: "<<currentMovie.getGenre()<<endl;
+                cout<<"Actors: "<<endl;
+                for(int i=0;i<currentMovie.getActorsNum();i++){
+                    int act = currentMovie.getActorID(i);
+                    for(int j=0;j<limit;j++){
+                        if(act == actors[j].getID()){
+                            cout<<"\t"<<actors[j].getName()<<endl;
+                        }
+                    }
+                }
+                }
                 break;
             case '6':
 
