@@ -132,9 +132,9 @@ int main(){
                 break;
             case '2':
                 for(int i=0;i<limit;i++){
-                    cout<<movies[i].getYear()<<" "<<movies[i].getTitle()<<" - "<<movies[i].getGenre()<<" ("<<movies[i].getDuration()<<"min)"<<endl;
+                    cout<<movies[i].getYear()<<" "<<movies[i].getTitle()<<" - "<<movies[i].getGenre()<<" ("<<movies[i].getDuration()<<" min)"<<endl;
                     for(int j=0;j<movies[i].getActorsNum();j++){
-                        int currentActor = movies[i].getActorID(i);
+                        int currentActor = movies[i].getActorID(j);
                         for(int k=0;k<limit;k++){
                             if(currentActor == actors[k].getID()){
                                 cout<<"\t"<<actors[k].getID()<<" "<<actors[k].getName()<<endl;
@@ -145,12 +145,47 @@ int main(){
                 }
                 break;
             case '3':
+                for(int i=0;i<limit;i++){
+                    if(functions[i].getCveFunction() == "A0"){
+                        break;
+                    }
+                    cout<<functions[i].getCveFunction()<<" ";
+                    for(int j=0;j<limit;j++){
+                        if(functions[i].getMovieNum() == movies[j].getMovieNum()){
+                            cout<<movies[j].getTitle()<<" in room ";
+                        }
+                    }
+                    cout<<functions[i].getRoom()<<" at ";
+                    Hour funcHr = functions[i].getHour();
+                    cout<<funcHr.getHour()<<":"<<funcHr.getMinute()<<endl;
+                }
                 break;
             case '4':
+                hour = -1;
+                min = -1;
+                while(hour<0||hour>23){
+                    cout<<"Enter the start hour: ";cin>>hour;
+                }
+                while(min<0||min>59){
+                    cout<<"Enter the start minute: ";cin>>min;
+                }
+                Hour currentHour;
+                for(int i=0;i<limit;i++){
+                    if(functions[i].getCveFunction() == "A0"){
+                        break;
+                    }
+                    currentHour = functions[i].getHour();
+                    Function currentFunc = functions[i];
+                    if(currentHour.getHour() == hour && currentHour.getMinute() == min){
+                        
+                    }
+                }
                 break;
             case '5':
+
                 break;
             case '6':
+
                 break;
             case '7':
                 cout<<"Thanks for coming!"<<endl;
