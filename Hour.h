@@ -52,5 +52,12 @@ int Hour::getMinute(){
 
 /*Methods*/
 void Hour::show(){
-    cout<<hour<<":"<<minute;
+    if(hour<10){
+        cout<<"0";
+    }
+    cout<<hour<<":";
+    if(minute<10){
+        cout<<"0";
+    }
+    cout<<minute;
 }
