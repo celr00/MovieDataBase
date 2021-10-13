@@ -10,11 +10,13 @@ using namespace std;
 
 int main(){
 
+    /*Array Declaration*/
     int limit = 20;
     Actor actors[limit];
     Function functions[limit];
     Movie movies[limit];
 
+    /*Opening of files*/
     ifstream act;
     act.open("Actores.txt");
     ifstream pelis;
@@ -132,6 +134,9 @@ int main(){
                 break;
             case '2':
                 for(int i=0;i<limit;i++){
+                    if(movies[i].getYear()==0){
+                        break;
+                    }
                     cout<<movies[i].getYear()<<" "<<movies[i].getTitle()<<" - "<<movies[i].getGenre()<<" ("<<movies[i].getDuration()<<" min)"<<endl;
                     for(int j=0;j<movies[i].getActorsNum();j++){
                         int currentActor = movies[i].getActorID(j);
